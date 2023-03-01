@@ -70,6 +70,29 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <h2 className='timeline__title'>Home</h2>
             <Sparkle />
           </div>
+
+          <form className='new-tweet-form'>
+            <div className='new-tweet-form__group'>
+              <img
+                className='new-tweet-form__img'
+                src='https://github.com/davyd-souza.png'
+                alt='Davyd Souza'
+              />
+              <textarea
+                className='new-tweet-form__textarea'
+                name='tweet'
+                id='tweet'
+                placeholder='What&lsquo;s happening?'
+                // rows={1}
+              />
+            </div>
+
+            <button className='button' type='submit'>
+              Tweet
+            </button>
+          </form>
+
+          <div className='separator' />
         </main>
       </section>
     </div>

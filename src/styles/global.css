@@ -4,6 +4,7 @@
 
   --clr-neutral-900: hsl(210, 25%, 8%);
   --clr-neutral-800: hsl(210, 25%, 28%);
+  --clr-neutral-600: hhsl(208, 25%, 44%);
   --clr-neutral-200: hsl(204, 14%, 93%);
   --clr-neutral-100: hsl(255, 100%, 100%);
 }
@@ -169,4 +170,55 @@ button {
   width: 1.5rem;
   height: 1.5rem;
   color: var(--clr-primary-400);
+}
+
+.new-tweet-form {
+  padding-block: 1.5em;
+  padding-inline: 1.25em;
+
+  display: grid;
+  grid-auto-columns: auto;
+  gap: 0.5rem;
+}
+
+.new-tweet-form__group {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+}
+
+.new-tweet-form__img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100vmax;
+}
+
+.new-tweet-form__textarea {
+  border: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  resize: none;
+}
+
+.new-tweet-form__textarea::placeholder {
+  color: var(--clr-neutral-600);
+}
+
+.new-tweet-form__textarea:is(:focus-within) {
+  outline: none;
+}
+
+.new-tweet-form > button {
+  justify-self: end;
+  font-size: 1rem;
+  font-weight: 900;
+  padding-inline: 2em;
+  padding-block: 0.75em;
+}
+
+.separator {
+  background-color: hsl(200, 23%, 98%);
+  border-top: 1px solid var(--clr-neutral-200);
+  border-bottom: 1px solid var(--clr-neutral-200);
+  padding: 0.75rem;
 }
