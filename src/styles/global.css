@@ -32,7 +32,8 @@ body {
   5. Improve text rendering
 */
 body {
-  color: hsl(210, 25%, 8%);
+  color: var(--clr-neutral-900);
+  font-family: 'Roboto', sans-serif;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
