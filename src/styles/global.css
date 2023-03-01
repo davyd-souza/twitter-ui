@@ -83,7 +83,7 @@ button {
 .button {
   display: inline-flex;
   justify-content: center;
-  padding: 0.8em;
+  padding: 0.6em;
 
   background-color: var(--clr-primary-400);
   border-radius: 100vmax;
