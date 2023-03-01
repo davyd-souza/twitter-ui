@@ -13,6 +13,7 @@ import {
   Hash,
   House,
   User,
+  Sparkle,
 } from 'phosphor-react'
 
 // ASSET
@@ -63,7 +64,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           Tweet
         </button>
       </aside>
-      <div className='content'>content</div>
+      <section className='content'>
+        <main className='timeline'>
+          <div className='timeline__header'>
+            <h2 className='timeline__title'>Home</h2>
+            <Sparkle />
+          </div>
+        </main>
+      </section>
     </div>
   </React.StrictMode>
 )

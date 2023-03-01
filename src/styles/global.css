@@ -4,6 +4,7 @@
 
   --clr-neutral-900: hsl(210, 25%, 8%);
   --clr-neutral-800: hsl(210, 25%, 28%);
+  --clr-neutral-200: hsl(204, 14%, 93%);
   --clr-neutral-100: hsl(255, 100%, 100%);
 }
 
@@ -147,6 +148,25 @@ button {
 }
 
 .content {
-  border-left: 1px solid #ebeef0;
-  border-right: 1px solid #ebeef0;
+  border-left: 1px solid var(--clr-neutral-200);
+  border-right: 1px solid var(--clr-neutral-200);
+}
+
+.timeline__header {
+  padding-block: 0.8333em;
+  padding-inline: 1em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--clr-neutral-200);
+}
+
+.timeline__header > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--clr-primary-400);
 }
