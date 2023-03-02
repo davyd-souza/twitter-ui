@@ -74,7 +74,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <form className='new-tweet-form'>
             <div className='new-tweet-form__group'>
               <img
-                className='new-tweet-form__img'
+                className='user-avatar'
                 src='https://github.com/davyd-souza.png'
                 alt='Davyd Souza'
               />
