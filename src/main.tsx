@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client'
 import { Tweet } from './components/Tweet'
 import { Sidebar } from './components/Sidebar'
 import { Header } from './components/Header'
+import { Separator } from './components/Separator'
 
 // STYLE
 import './styles/global.css'
@@ -40,7 +41,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             </button>
           </form>
 
-          <div className='separator' />
+          <Separator />
 
           <Tweet />
           <Tweet />
