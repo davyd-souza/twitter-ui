@@ -66,10 +66,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </aside>
       <section className='content'>
         <main className='timeline'>
-          <div className='timeline__header'>
+          <header className='timeline__header'>
             <h2 className='timeline__title'>Home</h2>
             <Sparkle />
-          </div>
+          </header>
 
           <form className='new-tweet-form'>
             <div className='new-tweet-form__group'>
