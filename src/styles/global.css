@@ -79,10 +79,6 @@ h6 {
   overflow-wrap: break-word;
 }
 
-button {
-  cursor: pointer;
-}
-
 /* General Styles*/
 .logo {
   width: 2rem;
@@ -90,17 +86,18 @@ button {
 }
 
 .button {
+  all: unset;
   display: inline-flex;
   justify-content: center;
   padding: 0.6em;
 
   background-color: var(--clr-primary-400);
   border-radius: 100vmax;
-  border: 0;
 
-  font-size: 1.25rem; /* 20px */
+  font-size: var(--fs-500);
   font-weight: 900;
   color: var(--clr-neutral-100);
+  cursor: pointer;
 }
 
 .button:is(:hover, :focus-within) {
