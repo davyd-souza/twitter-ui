@@ -2,69 +2,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
+// COMPONENT
+import { Tweet } from './components/Tweet'
+import { Sidebar } from './components/Sidebar'
+
 // STYLE
 import './styles/global.css'
-import {
-  DotsThree,
-  Bell,
-  BookmarkSimple,
-  Envelope,
-  FileText,
-  Hash,
-  House,
-  User,
-  Sparkle,
-} from 'phosphor-react'
-
-// ASSET
-import twitterLogo from './assets/twitter-logo.svg'
-import { Tweet } from './components/Tweet'
+import { Sparkle } from 'phosphor-react'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <div className='layout'>
-      <aside className='sidebar'>
-        <img className='logo' src={twitterLogo} alt='Logo' />
+      <Sidebar />
 
-        <nav className='navigation'>
-          <a href='#' className='navigation__link' data-active>
-            <House weight='fill' />
-            Home
-          </a>
-          <a href='#' className='navigation__link'>
-            <Hash />
-            Explore
-          </a>
-          <a href='#' className='navigation__link'>
-            <Bell />
-            Notifications
-          </a>
-          <a href='#' className='navigation__link'>
-            <Envelope />
-            Messages
-          </a>
-          <a href='#' className='navigation__link'>
-            <BookmarkSimple />
-            Bookmarks
-          </a>
-          <a href='#' className='navigation__link'>
-            <FileText />
-            Lists
-          </a>
-          <a href='#' className='navigation__link'>
-            <User />
-            Profile
-          </a>
-          <a href='#' className='navigation__link'>
-            <DotsThree />
-            More
-          </a>
-        </nav>
-
-        <button className='button' type='button'>
-          Tweet
-        </button>
-      </aside>
       <section className='content'>
         <main className='timeline'>
           <header className='timeline__header'>

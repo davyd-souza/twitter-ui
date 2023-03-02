@@ -1,0 +1,39 @@
+.sidebar {
+  padding-block: 1.5em;
+  padding-inline: 1.25em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navigation {
+  display: grid;
+  grid-auto-columns: auto;
+  gap: 1.5rem;
+}
+
+.navigation__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+
+  font-size: var(--fs-500);
+  font-weight: 700;
+  color: var(--clr-neutral-900);
+  text-decoration: none;
+}
+
+.navigation__link:is(:hover, :focus-within) {
+  color: var(--clr-neutral-500);
+  outline: transparent;
+}
+
+.navigation__link[data-active] {
+  color: var(--clr-primary-400);
+}
+
+.navigation__link > svg {
+  width: 2rem;
+  height: 2rem;
+}
