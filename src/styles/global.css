@@ -221,7 +221,7 @@ h6 {
 }
 
 .separator {
-  background-color: hsl(200, 23%, 98%);
+  background-color: var(--clr-neutral-150);
   border-top: 1px solid var(--clr-neutral-200);
   border-bottom: 1px solid var(--clr-neutral-200);
   padding: 0.75rem;
