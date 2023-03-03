@@ -6,6 +6,13 @@ import { Tweet } from '../../components/Tweet'
 // STYLE
 import './Timeline.css'
 
+// VARIABLE
+const PLACEHOLDER_TWEETS = [
+  'Estou testando o Twitter pela primeira vez agora',
+  'Meu Pokémon favorito é o Aron',
+  'Queria jogar um Minecraft com mods',
+]
+
 export function Timeline() {
   return (
     <main className='timeline'>
@@ -34,9 +41,9 @@ export function Timeline() {
 
       <Separator />
 
-      <Tweet />
-      <Tweet />
-      <Tweet />
+      {PLACEHOLDER_TWEETS.map((tweet) => (
+        <Tweet key={tweet} content={tweet} />
+      ))}
     </main>
   )
 }
