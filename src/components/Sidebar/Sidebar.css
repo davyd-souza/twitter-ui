@@ -24,12 +24,12 @@
   text-decoration: none;
 }
 
-.navigation__link:is(:hover, :focus-within) {
+.navigation__link:where(:hover, :focus) {
   color: var(--clr-neutral-500);
   outline: transparent;
 }
 
-.navigation__link[data-active] {
+.active {
   color: var(--clr-primary-400);
 }
 
