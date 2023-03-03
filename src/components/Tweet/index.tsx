@@ -1,3 +1,6 @@
+// DEPENDENCY
+import { Link } from 'react-router-dom'
+
 // STYLE
 import './Tweet.css'
 import { ArrowsClockwise, ChatCircle, Heart } from 'phosphor-react'
@@ -9,7 +12,7 @@ interface TweetProps {
 
 export function Tweet({ content }: TweetProps) {
   return (
-    <a href='#' className='tweet' draggable={false}>
+    <Link to='/status' className='tweet' draggable={false}>
       <img
         src='https://github.com/diego3g.png'
         alt='Diego Fernandes'
@@ -39,6 +42,6 @@ export function Tweet({ content }: TweetProps) {
           </button>
         </footer>
       </section>
-    </a>
+    </Link>
   )
 }
