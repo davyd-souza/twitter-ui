@@ -1,6 +1,10 @@
+// DEPENDENCY
+import { useRef } from 'react'
+
 // COMPONENT
 import { Header } from '../../components/Header'
 import { Separator } from '../../components/Separator'
+import { TextAreaAutoSize } from '../../components/TextAreaAutoSize'
 import { Tweet } from '../../components/Tweet'
 
 // STYLE
@@ -14,6 +18,8 @@ const PLACEHOLDER_TWEETS = [
 ]
 
 export function Timeline() {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null)
+
   return (
     <main className='timeline'>
       <Header title='Home' />
@@ -25,12 +31,12 @@ export function Timeline() {
             src='https://github.com/davyd-souza.png'
             alt='Davyd Souza'
           />
-          <textarea
+          <TextAreaAutoSize
             className='new-tweet-form__textarea'
             name='tweet'
             id='tweet'
             placeholder='What&lsquo;s happening?'
-            // rows={1}
+            ref={textAreaRef}
           />
         </div>
 
