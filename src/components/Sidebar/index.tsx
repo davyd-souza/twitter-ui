@@ -1,3 +1,6 @@
+// DEPENDENCY
+import { NavLink } from 'react-router-dom'
+
 // STYLE
 import './Sidebar.css'
 import {
@@ -20,10 +23,10 @@ export function Sidebar(): JSX.Element {
       <img className='logo' src={twitterLogo} alt='Logo' />
 
       <nav className='navigation'>
-        <a href='#' className='navigation__link' data-active>
+        <NavLink to='/' className='navigation__link'>
           <House weight='fill' />
           Home
-        </a>
+        </NavLink>
         <a href='#' className='navigation__link'>
           <Hash />
           Explore
