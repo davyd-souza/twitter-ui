@@ -32,6 +32,10 @@
   color: var(--clr-neutral-500);
 }
 
+.tweet__text {
+  word-break: break-all;
+}
+
 .tweet__footer {
   display: flex;
   align-items: center;
