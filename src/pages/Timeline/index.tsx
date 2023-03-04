@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { useRef } from 'react'
+import { FormEvent, useState } from 'react'
 
 // COMPONENT
 import { Header } from '../../components/Header'
@@ -10,21 +10,34 @@ import { Tweet } from '../../components/Tweet'
 // STYLE
 import './Timeline.css'
 
-// VARIABLE
-const PLACEHOLDER_TWEETS = [
-  'Estou testando o Twitter pela primeira vez agora',
-  'Meu Pokémon favorito é o Aron',
-  'Queria jogar um Minecraft com mods',
-]
-
 export function Timeline() {
+  const [tweets, setTweets] = useState([
+    'Queria jogar um Minecraft com mods',
+    'Meu Pokémon favorito é o Aron',
+    'Estou testando o Twitter pela primeira vez agora',
+  ])
   const [text, setText] = useState('')
+
+  const handleTextChange = (newText: string) => {
+    setText(newText)
+  }
+
+  const handleNewTweet = (evt: FormEvent) => {
+    evt.preventDefault()
+
+    if (text !== '') {
+      setTweets((prevState) => [text, ...prevState])
+      setText('')
+    } else {
+      alert('Você não pode criar um tweet vazio')
+    }
+  }
 
   return (
     <main className='timeline'>
       <Header title='Home' />
 
-      <form className='new-tweet-form'>
+      <form className='new-tweet-form' onSubmit={handleNewTweet}>
         <div className='new-tweet-form__group'>
           <img
             className='user-avatar'
