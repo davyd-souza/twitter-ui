@@ -62,8 +62,8 @@ export function Timeline() {
 
       <Separator />
 
-      {PLACEHOLDER_TWEETS.map((tweet) => (
-        <Tweet key={tweet} content={tweet} />
+      {tweets.map((tweet) => (
+        <Tweet key={crypto.randomUUID()} content={tweet} />
       ))}
     </main>
   )
