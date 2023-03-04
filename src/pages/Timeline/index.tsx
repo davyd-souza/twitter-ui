@@ -18,7 +18,7 @@ const PLACEHOLDER_TWEETS = [
 ]
 
 export function Timeline() {
-  const textAreaRef = useRef<HTMLTextAreaElement>(null)
+  const [text, setText] = useState('')
 
   return (
     <main className='timeline'>
@@ -36,7 +36,9 @@ export function Timeline() {
             name='tweet'
             id='tweet'
             placeholder='What&lsquo;s happening?'
-            ref={textAreaRef}
+            autoFocus
+            value={text}
+            onTextChange={handleTextChange}
           />
         </div>
 

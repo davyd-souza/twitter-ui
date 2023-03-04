@@ -1,49 +1,25 @@
 // DEPENDENCY
-import {
-  forwardRef,
-  useRef,
-  TextareaHTMLAttributes,
-  useEffect,
-  useState,
-} from 'react'
+import { TextareaHTMLAttributes, ChangeEvent } from 'react'
 
-export const TextAreaAutoSize = forwardRef<
-  HTMLTextAreaElement,
-  TextareaHTMLAttributes<HTMLTextAreaElement>
->(({ ...props }, ref) => {
-  const [textAreaValue, setTextAreaValue] = useState('')
-  const textAreaRef = useRef<HTMLTextAreaElement | null>(null)
+// TYPE
+interface TextAreaAutoSizeProps
+  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  onTextChange: (text: string) => void
+}
 
-  const handleTextAreaChange = (
-    evt: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setTextAreaValue(evt.target?.value)
+export function TextAreaAutoSize({
+  onTextChange,
+  ...props
+}: TextAreaAutoSizeProps) {
+  const handleChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
+    if (onTextChange) {
+      onTextChange(evt.target.value)
+    }
+    evt.target.style.height = '0px'
+    const scrollHeight = evt.target.scrollHeight
+
+    evt.target.style.height = `${scrollHeight}px`
   }
 
-  useEffect(() => {
-    const node = textAreaRef.current
-    if (node) {
-      node.style.height = '0px'
-      const scrollHeight = node.scrollHeight
-
-      node.style.height = `${scrollHeight}px`
-    }
-  }, [ref, textAreaValue])
-
-  return (
-    <textarea
-      rows={1}
-      ref={(node) => {
-        textAreaRef.current = node
-        if (typeof ref === 'function') {
-          ref(node)
-        } else if (ref) {
-          ref.current = node
-        }
-      }}
-      onChange={handleTextAreaChange}
-      value={textAreaValue}
-      {...props}
-    />
-  )
-})
+  return <textarea rows={1} onChange={handleChange} {...props} />
+}
