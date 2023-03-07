@@ -89,6 +89,7 @@ h6 {
   all: unset;
   display: inline-flex;
   justify-content: center;
+  align-items: center;
   padding: 0.6em;
 
   background-color: var(--clr-primary-400);
@@ -98,6 +99,26 @@ h6 {
   font-weight: 900;
   color: var(--clr-neutral-100);
   cursor: pointer;
+}
+
+.button > svg {
+  width: 1.5em;
+  height: 1.5em;
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .button > svg {
+    display: block;
+  }
+
+  .button > span {
+    display: none;
+  }
+
+  .button[data-sm-justify-end] {
+    justify-self: end;
+  }
 }
 
 .button:is(:hover, :focus-within) {
