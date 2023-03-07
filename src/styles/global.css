@@ -109,18 +109,3 @@ h6 {
   height: 3rem;
   border-radius: 100vmax;
 }
-
-/* Page: Timeline */
-
-.layout {
-  margin-inline: auto;
-  max-width: 1000px;
-
-  display: grid;
-  grid-template-columns: 300px 1fr;
-}
-
-.content {
-  border-left: 1px solid var(--clr-neutral-200);
-  border-right: 1px solid var(--clr-neutral-200);
-}
