@@ -16,6 +16,7 @@
 }
 
 .answer-tweet-form__textarea {
+  background-color: transparent;
   border: 0;
   font-size: var(--fs-500);
   font-weight: 500;
@@ -23,7 +24,7 @@
 }
 
 .answer-tweet-form__textarea::placeholder {
-  color: var(--clr-neutral-600);
+  color: var(--clr-neutral-500);
 }
 
 .answer-tweet-form__textarea:is(:focus-within) {
