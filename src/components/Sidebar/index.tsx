@@ -12,6 +12,7 @@ import {
   Hash,
   House,
   User,
+  Pencil,
 } from 'phosphor-react'
 
 // ASSET
@@ -25,40 +26,41 @@ export function Sidebar(): JSX.Element {
       <nav className='navigation'>
         <NavLink to='/' className='navigation__link'>
           <House weight='fill' />
-          Home
+          <span>Home</span>
         </NavLink>
         <a href='#' className='navigation__link'>
           <Hash />
-          Explore
+          <span>Explore</span>
         </a>
         <a href='#' className='navigation__link'>
           <Bell />
-          Notifications
+          <span>Notifications</span>
         </a>
         <a href='#' className='navigation__link'>
           <Envelope />
-          Messages
+          <span>Messages</span>
         </a>
         <a href='#' className='navigation__link'>
           <BookmarkSimple />
-          Bookmarks
+          <span>Bookmarks</span>
         </a>
         <a href='#' className='navigation__link'>
           <FileText />
-          Lists
+          <span>Lists</span>
         </a>
         <a href='#' className='navigation__link'>
           <User />
-          Profile
+          <span>Profile</span>
         </a>
         <a href='#' className='navigation__link'>
           <DotsThree />
-          More
+          <span>More</span>
         </a>
       </nav>
 
       <button className='button' type='button'>
-        Tweet
+        <Pencil />
+        <span>Tweet</span>
       </button>
     </aside>
   )

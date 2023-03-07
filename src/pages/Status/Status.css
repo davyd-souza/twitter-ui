@@ -4,7 +4,6 @@
 
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: start;
   gap: 0.5rem;
 
   border-bottom: 1px solid var(--clr-neutral-200);
@@ -35,4 +34,14 @@
   font-size: var(--fs-400);
   padding-inline: 2em;
   padding-block: 0.75em;
+}
+
+@media (max-width: 780px) {
+  .answer-tweet-form {
+    grid-template-columns: auto;
+  }
+
+  .answer-tweet-form__textarea {
+    font-size: var(--fs-400);
+  }
 }

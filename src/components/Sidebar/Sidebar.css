@@ -37,3 +37,22 @@
   width: 2rem;
   height: 2rem;
 }
+
+@media (max-width: 780px) {
+  .sidebar {
+    padding-inline: 0.75em;
+    align-items: center;
+  }
+
+  .navigation__link > span {
+    display: none;
+  }
+
+  .button > svg {
+    display: block;
+  }
+
+  .button > span {
+    display: none;
+  }
+}

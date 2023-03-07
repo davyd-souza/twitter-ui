@@ -1,6 +1,7 @@
 .layout {
   margin-inline: auto;
   max-width: 1000px;
+  min-height: 100svh;
 
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -9,4 +10,10 @@
 .content {
   border-left: 1px solid var(--clr-neutral-200);
   border-right: 1px solid var(--clr-neutral-200);
+}
+
+@media (max-width: 780px) {
+  .layout {
+    grid-template-columns: 80px 1fr;
+  }
 }

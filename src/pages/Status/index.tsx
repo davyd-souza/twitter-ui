@@ -9,6 +9,7 @@ import { TextAreaAutoSize } from '../../components/TextAreaAutoSize'
 
 // STYLE
 import './Status.css'
+import { PaperPlaneRight } from 'phosphor-react'
 
 export function Status() {
   const [answer, setAnswer] = useState([
@@ -71,8 +72,9 @@ export function Status() {
           />
         </div>
 
-        <button className='button' type='submit'>
-          Answer
+        <button className='button' type='submit' data-sm-justify-end>
+          <PaperPlaneRight />
+          <span>Answer</span>
         </button>
       </form>
 
