@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { FormEvent, useRef, useState } from 'react'
+import { FormEvent, KeyboardEvent, useState } from 'react'
 
 // COMPONENT
 import { Header } from '../../components/Header'
@@ -33,6 +33,17 @@ export function Status() {
     }
   }
 
+  const handleHotkeySubmit = (evt: KeyboardEvent) => {
+    if (evt.key === 'Enter' && (evt.ctrlKey || evt.metaKey)) {
+      if (text !== '') {
+        setAnswer((prevState) => [text, ...prevState])
+        setText('')
+      } else {
+        alert('Você não pode criar um tweet vazio')
+      }
+    }
+  }
+
   return (
     <main className='status'>
       <Header title='Tweet' />
@@ -56,6 +67,7 @@ export function Status() {
             autoFocus
             value={text}
             onTextChange={handleTextChange}
+            onKeyUp={handleHotkeySubmit}
           />
         </div>
 

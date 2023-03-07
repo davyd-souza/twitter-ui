@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { FormEvent, useState } from 'react'
+import { FormEvent, useState, KeyboardEvent } from 'react'
 
 // COMPONENT
 import { Header } from '../../components/Header'
@@ -33,6 +33,17 @@ export function Timeline() {
     }
   }
 
+  const handleHotkeySubmit = (evt: KeyboardEvent) => {
+    if (evt.key === 'Enter' && (evt.ctrlKey || evt.metaKey)) {
+      if (text !== '') {
+        setTweets((prevState) => [text, ...prevState])
+        setText('')
+      } else {
+        alert('Você não pode criar um tweet vazio')
+      }
+    }
+  }
+
   return (
     <main className='timeline'>
       <Header title='Home' />
@@ -52,6 +63,7 @@ export function Timeline() {
             autoFocus
             value={text}
             onTextChange={handleTextChange}
+            onKeyUp={handleHotkeySubmit}
           />
         </div>
 
