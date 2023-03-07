@@ -1,5 +1,5 @@
 // DEPENDENCY
-import { useRef } from 'react'
+import { FormEvent, useRef, useState } from 'react'
 
 // COMPONENT
 import { Header } from '../../components/Header'
@@ -10,15 +10,28 @@ import { TextAreaAutoSize } from '../../components/TextAreaAutoSize'
 // STYLE
 import './Status.css'
 
-// VARIABLE
-const PLACEHOLDER_ANSWER = [
-  'Achei interessante!',
-  'Não concordo, nem discordo, muito pelo contrário...',
-  'Eu também.',
-]
-
 export function Status() {
-  const textAreaRef = useRef<HTMLTextAreaElement>(null)
+  const [answer, setAnswer] = useState([
+    'Achei interessante!',
+    'Não concordo, nem discordo, muito pelo contrário...',
+    'Eu também.',
+  ])
+  const [text, setText] = useState('')
+
+  const handleTextChange = (newText: string) => {
+    setText(newText)
+  }
+
+  const handleNewAnswer = (evt: FormEvent) => {
+    evt.preventDefault()
+
+    if (text !== '') {
+      setAnswer((prevState) => [text, ...prevState])
+      setText('')
+    } else {
+      alert('Você não pode criar um tweet vazio')
+    }
+  }
 
   return (
     <main className='status'>
@@ -28,7 +41,7 @@ export function Status() {
 
       <Separator />
 
-      <form className='answer-tweet-form'>
+      <form className='answer-tweet-form' onSubmit={handleNewAnswer}>
         <div className='answer-tweet-form__group'>
           <img
             className='user-avatar'
@@ -40,7 +53,9 @@ export function Status() {
             name='tweet'
             id='tweet'
             placeholder='Tweet your answer'
-            ref={textAreaRef}
+            autoFocus
+            value={text}
+            onTextChange={handleTextChange}
           />
         </div>
 
@@ -49,7 +64,7 @@ export function Status() {
         </button>
       </form>
 
-      {PLACEHOLDER_ANSWER.map((tweet) => (
+      {answer.map((tweet) => (
         <Tweet key={tweet} content={tweet} />
       ))}
     </main>
