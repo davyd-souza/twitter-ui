@@ -3,8 +3,9 @@
   Share your thoughts with the world!
 </p>
 <p align="center">
-  <img src="" alt="Image of application's Home" />
+  <img src="https://user-images.githubusercontent.com/54182110/223589417-2a5a65b7-b291-4e97-bf61-597d644ee2ca.png" alt="Image of application's Home" />
 </p>
+
 <p align="center">
   <a href="#tech">Technologies</a> •
   <a href="#use">How to Use</a> •
